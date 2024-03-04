@@ -12,7 +12,7 @@ class PostDisplay(BaseModel):
     image_url:str
     title:str
     content:str
-    creater:str
-    timestamp:datetime
+    creator:str
+    timestamp: datetime
     class Config():
-        orm_mode = True
+        from_attributes = True
