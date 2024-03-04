@@ -17,3 +17,7 @@ def create_post(request:PostBase,db:Session = Depends(get_db)):
 @router.get('/all',response_model=List[PostDisplay])
 def get_post(db:Session=Depends(get_db)):
     return db_post.get_all(db)
+
+@router.delete('/{id}')
+def delete_post(id:int, db:Session=Depends(get_db)):
+    return db_post.delete_post(db,id)
