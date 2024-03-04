@@ -16,6 +16,6 @@ def create_post(db:Session,request:PostBase):
     db.refresh(new_post)
     return new_post
     
-def get_post(db:Session):
+def get_all(db:Session):
     all_post= db.query(DBPost).all()
     return all_post
